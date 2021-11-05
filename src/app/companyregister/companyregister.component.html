@@ -1,34 +1,71 @@
 <div class="wrapper">
     <div class="inner">
-    <form action="">
-    <h3> Company Registration Form</h3>
-    <div class="form-wrapper">
-    <label for="">Company Name</label>
-    <input type="text" class="form-control">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+          <div class="card-img-left d-none d-md-flex">
+            <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body p-4 p-sm-5">
+            <h3>Company Registration Form</h3>
+            <div class="alert alert-success" role="alert" *ngIf="showSuccessMessage">
+              Account created successfully! Proceed to login 😃.
+            </div>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  
+              <div class="form-wrapper"> 
+                  <label for="floatingInputUsername"> Company Name</label>
+                <input type="text" class="form-control" id="floatingInputUsername" placeholder="Name" required
+                  autofocus ngModel name="username" username>
+              </div>
+  
+              <div class="form-wrapper">
+                   <label for="floatingInputEmail">Email address</label>
+                <input type="email" class="form-control" id="floatingInputEmail" placeholder="Email"
+                  name="email" ngModel email required>
+              </div>
+  
+              
+  
+              <div class="form-wrapper">
+                  <label for="floatingPassword">Password</label>
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"
+                  ngModel password required>
+              </div>
+  
+              <div class="form-wrapper">
+                  <label for="floatingPasswordConfirm">Confirm Password</label>
+                <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password"
+                  name="c_password" ngModel c_password required>
+              </div>
+  
+              <div class="d-grid mb-2">
+                <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit"
+                  [disabled]="!f.valid">Register</button>
+              </div>
+  
+              <a class="d-block text-center mt-2 small" routerLink="/login">Have an account? Sign In</a>
+  
+              <hr class="my-4">
+             <div class="media">
+              <div class="d-grid mb-2">
+                <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
+                  <i class="fab fa-google me-2"></i> Sign up with Google
+                </button>
+              </div>
+  
+              <div class="d-grid">
+                <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
+                  <i class="fab fa-facebook-f me-2"></i> Sign up with Facebook
+                </button>
+              </div>
+            </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="form-wrapper">
-    <label for="">Email <Address></Address></label>
-    <input type="email" class="form-control">
-    </div>
-    <div class="form-wrapper">
-    <label for="">Location</label>
-    <input type="text" class="form-control">
-    </div>
-    <div class="form-wrapper">
-    <label for="">Ownership</label>
-    <input type="text" class="form-control">
-    </div>
-    <div class="checkbox">
-    <label>
-    <input type="checkbox"> I accept the Terms of Use & Privacy Policy.
-    <span class="checkmark"></span>
-    </label>
-    </div>
-    <button>Register Now</button>
-    </form>
-    </div>
-    </div>
-    
+  </div>
     
     
   
